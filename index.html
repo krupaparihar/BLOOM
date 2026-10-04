@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bloom – a space for girls to learn, earn and stay safe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side" id="side">
+    <a class="logo" href="#/home">Bloom<i>.</i></a>
+    <nav class="nav" id="nav" aria-label="Main"></nav>
+    <div class="who" id="who"></div>
+    <p class="side-note">Private by design: your notes and plans stay on this device.</p>
+  </aside>
+  <div class="scrim" id="scrim" onclick="closeNav()"></div>
+  <div class="content">
+    <header class="top"><button class="burger" onclick="openNav()" aria-label="Open menu">☰</button><span class="logo sm">Bloom<i>.</i></span></header>
+    <button class="quick" onclick="quickExit()" title="Leave this site instantly (or press Esc twice)">Quick Exit</button>
+    <main id="view"></main>
+    <footer>Bloom is made to guide and inspire. Scholarship, exam and scheme details change every year, so always confirm dates and rules on the official website before you apply. In an emergency, call 112.</footer>
+  </div>
+</div>
+
+<button class="chatbtn" onclick="toggleChat()" aria-label="Open Bloom helper">💬</button>
+<section class="chat" id="chat" hidden aria-label="Bloom helper">
+  <header>Bloom Helper 🌸</header>
+  <div class="msgs" id="msgs"></div>
+  <form onsubmit="return sendChat(event)"><input id="chatIn" placeholder="Ask about scholarships, exams, safety…" autocomplete="off"><button class="btn sm" type="submit">Send</button></form>
+</section>
+<div class="modal" id="modal" hidden onclick="if(event.target===this)closeModal()"><div class="mbox" id="mbox"></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
